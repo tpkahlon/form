@@ -1,6 +1,6 @@
 {
   "name": "form",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
@@ -10,13 +10,15 @@
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
     "sass": "^1.35.1",
+    "surge": "^0.23.0",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "npm run build && npx surge --domain `cat CNAME` build"
   },
   "eslintConfig": {
     "extends": [
