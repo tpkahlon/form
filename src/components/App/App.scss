@@ -1,0 +1,131 @@
+@import "../../styles/variables";
+
+body {
+  background: $bg;
+  > div {
+    width: calc(100vw - 2rem);
+    @media #{$tablet} {
+      width: 25rem;
+      height: 28rem;
+    }
+  }
+}
+
+.form {
+  padding: 2rem;
+  background: $bg-form;
+  border-top: 2px solid $primary;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.15);
+  &__errors {
+    background: $bg;
+    margin: 0.5rem 0 0.75rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    text-transform: lowercase;
+    &::first-letter {
+      text-transform: capitalize;
+    }
+  }
+  &__section {
+    margin: 0 0 1rem;
+    &--remember {
+      display: flex;
+      align-items: center;
+    }
+    &--error {
+      input {
+        border: 1px solid $error;
+        box-shadow: 0 0 6px 3px $errorShadow;
+      }
+    }
+  }
+  &__fieldset {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    background: none;
+  }
+  &__legend {
+    width: 100%;
+    font-weight: bold;
+    font-size: 1.75rem;
+    text-align: center;
+  }
+  &__label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.2rem;
+    &--remember {
+      font-weight: normal;
+      margin-left: 0.5rem;
+    }
+  }
+  &__input {
+    &:-webkit-autofill {
+      border: 1px solid $border-checkbox;
+    }
+    &:autofill {
+      border: 1px solid $border-checkbox;
+    }
+    &--base {
+      width: 100%;
+      height: 3rem;
+      padding: 0 1rem;
+      box-shadow: none;
+      background: transparent;
+      border: 1px solid $border-checkbox;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+  &__button {
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    line-height: normal;
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+    -webkit-appearance: none;
+    width: 100%;
+    height: 3rem;
+    display: block;
+    border: none;
+    color: $bg-form;
+    font-size: 1.25rem;
+    font-weight: bold;
+    background: $primary;
+    &:hover {
+      cursor: pointer;
+      background: darken($primary, 5%);
+    }
+    &::-moz-focus-inner {
+      border: 0;
+      padding: 0;
+    }
+  }
+  &__nav {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  &__link {
+    color: $muted;
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &__a {
+    font-weight: bold;
+    color: $secondary;
+    &--signup {
+      margin-left: 0.2rem;
+    }
+    &:hover {
+      text-decoration: none;
+      color: lighten($secondary, 25%);
+    }
+  }
+}
